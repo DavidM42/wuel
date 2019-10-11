@@ -1,0 +1,31 @@
+.search-form {
+    min-width: 300px;
+    max-width: 600px;
+    width: 60ch;
+}
+
+.search-full-width {
+    width: 100%;
+}
+
+.search-option-img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+[dir='rtl'] .search-option-img {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+
+
+.md-button-right .button-group {
+    position: absolute;
+    right: 0px;
+    margin: 0;
+}
+
+md-input-container.md-button-right>md-icon+input, md-input-container.md-button-right>md-icon+textarea {
+    margin-right: 100px;
+}

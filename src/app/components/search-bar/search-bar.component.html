@@ -1,0 +1,17 @@
+<form class="search-form" (ngSubmit)="onSubmit()">
+    <span style="display: inline">
+    <mat-form-field class="search-full-width">
+        <input matInput placeholder="Nach was wuelst du?" aria-label="Task" [matAutocomplete]="auto" [formControl]="taskCtrl">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let task of filteredTasks | async" [value]="task.name">
+                <img class="search-option-img" aria-hidden [src]="task.icon" height="25">
+                <span>{{task.name}}</span> |
+                <small>Platform: {{tasks.platform}}</small>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="submit">Go</button>
+    </span>
+    
+    <!-- <button type="submit" class="btn btn-success mat-stroked-button">Submit</button> -->
+</form>
