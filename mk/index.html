@@ -2,23 +2,54 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <link rel="stylesheet" href="../static/main.css">
         <style>
-            body: {
+            div.bg {
                 background-color: #fff;
                 color: #333;
             }
+
+            div.col {
+                background-color: #333;
+                color: #fff; 
+            }
         </style>
+
+        <!-- Bootstrap css imports -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Medienkommunikation</h1>
+        <div class="bg">
+            <div class="container">
+                <h1 class="title">Medienkommunikation</h1>
 
-        <ul>
-            
-                <li><a href="https://wuestudy.zv.uni-wuerzburg.de">Wustudy</a></li>
-            
-                <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/">Wuecanpus2</a></li>
-            
-        </ul>
+                <div class="row">
+                    
+                    <a href="https://wuestudy.zv.uni-wuerzburg.de">
+                        <div class="col">
+                            <img class="linkIcon" src="https://wuestudy.zv.uni-wuerzburg.de/HISinOne/images/logos/touch_icon_apple_retina_wue.png">
+                            <br>
+                            Wustudy
+                        </div>
+                    </a>
+                    
+                    <a href="https://wuecampus2.uni-wuerzburg.de/moodle/">
+                        <div class="col">
+                            <img class="linkIcon" src="https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1594999264/favicon.ico">
+                            <br>
+                            Wuecampus2
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap js imports -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
