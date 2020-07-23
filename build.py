@@ -16,7 +16,7 @@ def renderSubjectPages():
             title = data["title"]
             subjectLinks.append({
                     "name": title,
-                    "href": "/" + subject + "/"
+                    "href": "./" + subject + "/"
             })
 
             site = Site.make_site(
