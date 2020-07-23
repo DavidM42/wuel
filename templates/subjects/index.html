@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/main.css">
+        <style>
+            body: {
+                background-color: {{backgroundColor}};
+                color: {{color}};
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+
+        <ul>
+            {% for item in links %}
+                <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
+

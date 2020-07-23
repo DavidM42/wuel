@@ -1,0 +1,17 @@
+{
+    "title": "Medienkommunikation",
+    "backgroundColor": "#fff",
+    "color": "#333",
+    "links": [
+        {
+            "name": "Wustudy",
+            "href": "https://wuestudy.zv.uni-wuerzburg.de",
+            "iconUrl": "https://wuestudy.zv.uni-wuerzburg.de/HISinOne/images/logos/touch_icon_apple_retina_wue.png"
+        },
+        {
+            "name": "Wuecanpus2",
+            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/",
+            "iconUrl": "https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1594999264/favicon.ico"
+        }
+    ]
+}
