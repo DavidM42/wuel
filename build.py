@@ -16,7 +16,7 @@ def renderSubjectPages():
             title = data["title"]
             subjectLinks.append({
                     "name": title,
-                    "href": "./" + subject + "/"
+                    "href": "/" + subject + "/"
             })
 
             site = Site.make_site(
@@ -38,6 +38,10 @@ def renderHomepage(subjectLinks):
             "links": subjectLinks
         })
     site.render()
+
+    # write json file for dropdown of courses links in wuex extension
+    with open('dist/courses.json', 'w') as outfile:
+        json.dump(subjectLinks, outfile)
 
 
 if __name__ == "__main__":
