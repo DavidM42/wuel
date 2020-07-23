@@ -10,7 +10,7 @@ def renderSubjectPages():
     for file_name in [file for file in os.listdir(path_to_subject_jsons) if file.endswith('.json')]:
         subject = file_name.replace('.json', '')
 
-        with open(path_to_subject_jsons + file_name) as json_file:
+        with open(path_to_subject_jsons + file_name, encoding='utf-8') as json_file:
             data = json.load(json_file)
 
             title = data["title"]
@@ -40,7 +40,7 @@ def renderHomepage(subjectLinks):
     site.render()
 
     # write json file for dropdown of courses links in wuex extension
-    with open('dist/courses.json', 'w') as outfile:
+    with open('dist/courses.json', 'w', encoding='utf-8') as outfile:
         json.dump(subjectLinks, outfile)
 
 

@@ -9,9 +9,14 @@
             "iconUrl": "https://wuestudy.zv.uni-wuerzburg.de/HISinOne/images/logos/touch_icon_apple_retina_wue.png"
         },
         {
-            "name": "Wuecanpus2",
+            "name": "Wuecampus2",
             "href": "https://wuecampus2.uni-wuerzburg.de/moodle/",
             "iconUrl": "https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1594999264/favicon.ico"
+        },
+        {
+            "name": "Studienverlaufsplan",
+            "href": "https://mcs.phil2.uni-wuerzburg.de/assets/images/1208/general/MCS-FSB2018x300.png",
+            "iconUrl": "https://mcs.phil2.uni-wuerzburg.de/assets/images/1208/general/MCS-FSB2018x300.png"
         }
     ]
 }
