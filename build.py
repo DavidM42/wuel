@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from staticjinja import Site
 import os,json
 from shutil import rmtree
@@ -8,6 +10,41 @@ from io import BytesIO
 from urllib.parse import urlparse
 import favicon
 from base64 import b64encode
+
+
+def createManifest(subjectPath = None, subjectTitle = None, color = None, background_color = None):
+    data = {
+        "name": "Wuel Quick Links",
+        "short_name": "Wuel",
+        "description": "Quick links for students at the university würzburg to save you time",
+        "theme_color": "#215293",
+        "background_color": "#2196f3",
+        "display": "browser",
+        "orientation": "portrait",
+        "scope": "/",
+        "start_url": "/"
+        # TODO missing icons cause I don't have one yet
+    }
+    if subjectPath and subjectTitle and color and background_color:
+        data["name"] = "Wuel - " + subjectTitle + " Links"
+        data["short_name"] = "Wuel - " + subjectPath
+        data["description"] = "Quick links for " + subjectTitle + " students at the university würzburg to save you time"
+        data["theme_color"] = color
+        data["background_color"] = background_color
+        data["start_url"] = "/" + subjectPath + "/"
+    
+    base_path = "dist/"
+    filename = "manifest.json"
+    if subjectPath:
+        path = base_path + subjectPath + "/" + filename
+        print("Creating manifest.json for " + subjectPath + "...")
+    else:
+        path = base_path + filename
+        print("Creating manifest.json for index...")
+
+    # write json file for web manifest
+    with open(path, 'w', encoding='utf-8') as outfile:
+        json.dump(data, outfile, ensure_ascii=False)
 
 
 iconsDownloadedUrls = []
@@ -95,6 +132,7 @@ def renderSubjectPages():
                 outpath="dist/" + subject,
                 env_globals=data)
             site.render()
+            createManifest(subject,data["title"],data["color"], data["backgroundColor"])
     return subjectLinks
 
 def renderHomepage(subjectLinks):
@@ -110,6 +148,7 @@ def renderHomepage(subjectLinks):
             "links": subjectLinks
         })
     site.render()
+    createManifest()
 
 def createCoursesJson(subjectLinks):
     courseJsonPath = 'dist/courses.json'
