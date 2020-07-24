@@ -53,7 +53,17 @@ def cacheDownloadAndRelinkImages(data):
             if response and response.ok:
                 print("Cached " + icon_url + "...")
                 img = Image.open(BytesIO(response.content))
-                # TODO maybe resize small and and square sometime later?
+
+                # resize to 150px width and height
+                basewidth = 150
+                # would be to calculate height via aspect ratio
+                # wpercent = (basewidth/float(img.size[0]))
+                # hsize = int((float(img.size[1])*float(wpercent)))
+                # img = img.resize((basewidth,hsize), Image.ANTIALIAS)
+                img = img.resize((basewidth,basewidth), Image.ANTIALIAS)
+
+                # convert to rgba for png file, save and relink
+                img.convert('RGBA')
                 img.save(path)
                 data["links"][index]["iconUrl"] = webLink
                 iconsDownloadedUrls.append(icon_url)
