@@ -10,7 +10,8 @@
         },
         {
             "name": "Wuecampus2",
-            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/"
+            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/",
+            "iconUrl": "https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1594999264/favicon.ico"
         },
         {
             "name": "Webmail",
@@ -18,7 +19,8 @@
         },
         {
             "name": "Rocketchat",
-            "href": "https://chat.informatik.uni-wuerzburg.de/home"
+            "href": "https://chat.informatik.uni-wuerzburg.de/home",
+            "iconUrl": "https://chat.informatik.uni-wuerzburg.de/assets/favicon_512.png"
         },
         {
             "name": "Nextcloud",
