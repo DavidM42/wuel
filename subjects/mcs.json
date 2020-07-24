@@ -5,49 +5,40 @@
     "links": [
         {
             "name": "Wuestudy",
-            "href": "https://wuestudy.zv.uni-wuerzburg.de",
-            "iconUrl": "https://wuestudy.zv.uni-wuerzburg.de/HISinOne/images/logos/touch_icon_apple_retina_wue.png"
+            "href": "https://wuestudy.zv.uni-wuerzburg.de"
         },
         {
             "name": "Wuecampus2",
-            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/",
-            "iconUrl": "https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1594999264/favicon.ico"
+            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/"
         },
         {
             "name": "Webmail",
-            "href": "https://webmail.uni-wuerzburg.de/",
-            "iconUrl": "https://webmail.uni-wuerzburg.de/themes/uniwue/graphics/favicon.ico"
+            "href": "https://webmail.uni-wuerzburg.de/"
         },
         {
             "name": "Rocketchat",
-            "href": "https://chat.informatik.uni-wuerzburg.de/home",
-            "iconUrl": "https://chat.informatik.uni-wuerzburg.de/assets/favicon_512.png"
+            "href": "https://chat.informatik.uni-wuerzburg.de/home"
         },
         {
             "name": "Nextcloud",
-            "href": "https://cloud.informatik.uni-wuerzburg.de/",
-            "iconUrl": "https://cloud.informatik.uni-wuerzburg.de/core/img/favicon-touch.png"
+            "href": "https://cloud.informatik.uni-wuerzburg.de/"
         },
         {
             "name": "Zoom",
-            "href": "https://uni-wuerzburg.zoom.us/",
-            "iconUrl": "https://d24cgw3uvb9a9h.cloudfront.net/zoom.ico"
+            "href": "https://uni-wuerzburg.zoom.us/"
         },
 
         {
             "name": "Studienverlaufsplan",
-            "href": "https://mcs.phil2.uni-wuerzburg.de/assets/images/1208/general/MCS-FSB2018x300.png",
-            "iconUrl": "https://mcs.phil2.uni-wuerzburg.de/assets/images/1208/general/MCS-FSB2018x300.png"
+            "href": "https://mcs.phil2.uni-wuerzburg.de/assets/images/1208/general/MCS-FSB2018x300.png"
         },
         {
             "name": "Institut für Medieninformatik",
-            "href": "https://www.mcm.uni-wuerzburg.de/",
-            "iconUrl": "https://www.mcm.uni-wuerzburg.de/favicon.ico"
+            "href": "https://www.mcm.uni-wuerzburg.de/"
         },
         {
             "name": "Gitlab der Informatik",
-            "href": "https://gitlab.informatik.uni-wuerzburg.de/",
-            "iconUrl": "https://gitlab.informatik.uni-wuerzburg.de/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png"
+            "href": "https://gitlab.informatik.uni-wuerzburg.de/"
         }
     ]
 }

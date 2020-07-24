@@ -1,22 +1,34 @@
 from staticjinja import Site
 import os,json
 from shutil import rmtree
+
 from PIL import Image
 import requests
 from io import BytesIO
 from urllib.parse import urlparse
+import favicon
+from base64 import b64encode
 
 
+iconsDownloadedUrls = []
 def cacheDownloadAndRelinkImages(data):
     for index, link in enumerate(data["links"]):
         # parse icon name with and without extensions
-        icon_url = link["iconUrl"]
-        parser = urlparse(icon_url)
-        icon_name_w_extension = os.path.basename(parser.path)
-        icon_name_wo_extension = os.path.splitext(icon_name_w_extension)[0]
+        try:
+            icon_url = link["iconUrl"]
+        except KeyError as e:
+            # use library to find iconUrl if none given
+            icons = favicon.get(link["href"])
+            for icon in icons:
+                if ".php" not in icon.url:
+                    icon_url = icon.url
+                    break
+            print(icon_url)
+
         # could also use new webp or other next gen formats
         # but webP not supported in safari
-        icon_name_new_extension = icon_name_wo_extension + '.png'
+        # thanks to https://stackoverflow.com/a/27253809
+        icon_name_new_extension = b64encode(icon_url.encode()).decode() + '.png'
         webLink = '/static/' + icon_name_new_extension
 
         # create dist folder if new and construct path
@@ -26,15 +38,17 @@ def cacheDownloadAndRelinkImages(data):
         path = static_path + icon_name_new_extension
 
         # get and cache iconImages or relink if existing
-        if os.path.exists(path):
+        if icon_url in iconsDownloadedUrls:
             data["links"][index]["iconUrl"] = webLink
         else:
             response = requests.get(icon_url)
             if response and response.ok:
+                print("Cached " + icon_url + "...")
                 img = Image.open(BytesIO(response.content))
                 # TODO maybe resize small and and square sometime later?
                 img.save(path)
                 data["links"][index]["iconUrl"] = webLink
+                iconsDownloadedUrls.append(icon_url)
     return data
 
 def renderSubjectPages():
@@ -57,6 +71,7 @@ def renderSubjectPages():
                     "href": "/" + subject + "/"
             })
 
+            print("-------- Rendering " + subject + "----------")
             site = Site.make_site(
                 searchpath="./templates/subjects",
                 outpath="dist/" + subject,
@@ -67,6 +82,7 @@ def renderSubjectPages():
 def renderHomepage(subjectLinks):
     # homepage site to copy static files
     # and link to all subjects
+    print("===> Rendering homepage...")
     site = Site.make_site(
         searchpath="./templates/main",
         outpath="dist/",
@@ -81,12 +97,16 @@ def createCoursesJson(subjectLinks):
     courseJsonPath = 'dist/courses.json'
     # write json file for dropdown of courses links in wuex extension
     with open(courseJsonPath, 'w', encoding='utf-8') as outfile:
+        print("Creating courses.json...")
         json.dump(subjectLinks, outfile)
 
 
 if __name__ == "__main__":
-    # clear dir folder and ignore errors if no dir folder exists
-    rmtree('./dir/', True)
+    try:
+        # clear dist folder and does not ignore errors
+        rmtree('./dist/', False)
+    except Exception as e:
+        print(e)
 
     subjectLinks = renderSubjectPages()
     renderHomepage(subjectLinks)
