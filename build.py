@@ -39,8 +39,10 @@ def renderHomepage(subjectLinks):
         })
     site.render()
 
+def createCoursesJson(subjectLinks):
+    courseJsonPath = 'dist/courses.json'
     # write json file for dropdown of courses links in wuex extension
-    with open('dist/courses.json', 'w', encoding='utf-8') as outfile:
+    with open(courseJsonPath, 'w', encoding='utf-8') as outfile:
         json.dump(subjectLinks, outfile)
 
 
@@ -50,3 +52,4 @@ if __name__ == "__main__":
 
     subjectLinks = renderSubjectPages()
     renderHomepage(subjectLinks)
+    createCoursesJson(subjectLinks)
