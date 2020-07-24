@@ -17,13 +17,21 @@ def cacheDownloadAndRelinkImages(data):
         try:
             icon_url = link["iconUrl"]
         except KeyError as e:
+            icon_url = None
             # use library to find iconUrl if none given
             icons = favicon.get(link["href"])
             for icon in icons:
-                if ".php" not in icon.url:
+                # else have horde problem
+                # gets first valid so best quality favicon
+                if ".php?url=" not in icon.url:
                     icon_url = icon.url
                     break
-            print(icon_url)
+            
+            # found no valid iconUrl 
+            if not icon_url: 
+                print("Found no favicon for " + link["href"])
+                print(icons)
+                continue
 
         # could also use new webp or other next gen formats
         # but webP not supported in safari

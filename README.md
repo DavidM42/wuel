@@ -28,13 +28,13 @@ A `course.json` follows this schema
         },
         {
             "name": "Wuecampus2",
-            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/",
-            "iconUrl": "https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1594999264/favicon.ico"
+            "href": "https://wuecampus2.uni-wuerzburg.de/moodle/"
         }
     ]
 }
 ```
 To add new courses copy the `basic.json` edit the fields and add new links.
+The `iconUrl` property is optional. The software tries to retrieve the icon itself if not given but for some urls like images it needs to be linked explicitly.
 This new course is then served under the name of the json as path.
 On the next build it should be linked on the main page, available as seperate page and if built to wuel.de also included in the dropdown of wueXtension to choose from.
 

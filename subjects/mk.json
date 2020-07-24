@@ -5,7 +5,8 @@
     "links": [
         {
             "name": "Wuestudy",
-            "href": "https://wuestudy.zv.uni-wuerzburg.de"
+            "href": "https://wuestudy.zv.uni-wuerzburg.de",
+            "iconUrl": "https://wuestudy.zv.uni-wuerzburg.de/HISinOne/images/logos/touch_icon_apple_retina_wue.png"
         },
         {
             "name": "Wuecampus2",
@@ -21,7 +22,8 @@
         },
         {
             "name": "Nextcloud",
-            "href": "https://cloud.informatik.uni-wuerzburg.de/"
+            "href": "https://cloud.informatik.uni-wuerzburg.de/",
+            "iconUrl": "https://cloud.informatik.uni-wuerzburg.de/core/img/favicon-touch.png"
         },
         {
             "name": "Zoom",
