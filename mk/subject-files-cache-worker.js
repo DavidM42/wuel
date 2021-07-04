@@ -10,9 +10,9 @@ const CACHE_NAME = 'subject-files-cache-v1';
 
 // Add list of files to cache here.
 const FILES_TO_CACHE = [
-    `/index.html`,
-    `/manifest.json`,
-    `/links.json`
+    `./index.html`,
+    `./manifest.json`,
+    `./links.json`
 ];
 
 self.addEventListener('install', (evt) => {
