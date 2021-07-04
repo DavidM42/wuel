@@ -75,7 +75,7 @@
                     });
 
                     // then add worker to cache index.html of subject and manifest.json and so on
-                    navigator.serviceWorker.register('./static/subject-files-cache-worker.js', {
+                    navigator.serviceWorker.register('./subject-files-cache-worker.js', {
                         scope: subjectPath + '/'
                     }).then((reg) => {
                         console.log('Service worker for subject files registered.', reg);

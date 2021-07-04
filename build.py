@@ -2,7 +2,7 @@
 
 from staticjinja import Site
 import os,json
-from shutil import rmtree
+from shutil import rmtree, move
 
 from PIL import Image
 import requests
@@ -145,6 +145,9 @@ def renderSubjectPages():
             site.render()
             createManifest(subject,data["title"],data["color"], data["backgroundColor"], '..')
             createLinksJson(data["links"], subject)
+    
+            # have to move this service worker file because of scope reasons into base folder not keep in static 
+            move(f"dist/{subject}/static/subject-files-cache-worker.js", f"dist/{subject}/subject-files-cache-worker.js")
     return subjectLinks
 
 def renderHomepage(subjectLinks):

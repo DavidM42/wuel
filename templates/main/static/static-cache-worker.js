@@ -11,12 +11,12 @@ const CACHE_NAME = 'static-files-cache-v1';
 
 // Add list of files to cache here.
 const FILES_TO_CACHE = [
-    `/icons/favicon.ico`,
-    `/main.css`,
-    `/icons/favicon-96x96.png`,
-    `/icons/favicon-16x16.png`,
-    `/external/bootstrap.min.css`,
-    `/external/bootstrap-native.min.js`
+    `../static/icons/favicon.ico`,
+    `../static/main.css`,
+    `../static/icons/favicon-96x96.png`,
+    `../static/icons/favicon-16x16.png`,
+    `../static/external/bootstrap.min.css`,
+    `../static/external/bootstrap-native.min.js`
 ];
 
 self.addEventListener('install', (evt) => {
