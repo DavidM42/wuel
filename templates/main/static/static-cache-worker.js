@@ -13,8 +13,8 @@ const CACHE_NAME = 'static-files-cache-v1';
 const FILES_TO_CACHE = [
     `../static/icons/favicon.ico`,
     `../static/main.css`,
-    `../static/icons/favicon-96x96.png`,
     `../static/icons/favicon-16x16.png`,
+    `../static/icons/favicon-32x32.png`,
     `../static/external/bootstrap.min.css`,
     `../static/external/bootstrap-native.min.js`
 ];
