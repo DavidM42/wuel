@@ -68,14 +68,14 @@
 
                 window.addEventListener('load', () => {
                     // first add worker to cache static files like main.css
-                    navigator.serviceWorker.register('../static/service-workers/static-cache-worker', {
+                    navigator.serviceWorker.register('../static/static-cache-worker.js', {
                         scope: staticPath
                     }).then((reg) => {
                         console.log('Service worker for static files registered.', reg);
                     });
 
                     // then add worker to cache index.html of subject and manifest.json and so on
-                    navigator.serviceWorker.register('../static/service-workers/subject-files-cache-worker.js', {
+                    navigator.serviceWorker.register('./static/subject-files-cache-worker.js', {
                         scope: subjectPath
                     }).then((reg) => {
                         console.log('Service worker for subject files registered.', reg);
