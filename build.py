@@ -25,14 +25,34 @@ def createManifest(subjectPath = None, subjectTitle = None, color = None, backgr
         "start_url": "/",
         "icons": [
             {
-                "src":  toBasePath + "/static/icons/android-chrome-192x192.png",
-                "sizes": "192x192",
-                "type": "image/png"
+                "src":  toBasePath + "/static/icons/maskable_icon_x48.png",
+                "sizes": "48x48",
+                "type": "image/png",
+                "purpose": "any maskable"
+            },
+                        {
+                "src":  toBasePath + "/static/icons/maskable_icon_x72.png",
+                "sizes": "72x72",
+                "type": "image/png",
+                "purpose": "any maskable"
             },
             {
-                "src":  toBasePath + "/static/icons/android-chrome-512x512.png",
+                "src":  toBasePath + "/static/icons/maskable_icon_x128.png",
+                "sizes": "128x128",
+                "type": "image/png",
+                "purpose": "any maskable"
+            },
+            {
+                "src":  toBasePath + "/static/icons/maskable_icon_x192.png",
+                "sizes": "192x192",
+                "type": "image/png",
+                "purpose": "any maskable"
+            },
+            {
+                "src":  toBasePath + "/static/icons/maskable_icon_x512.png",
                 "sizes": "512x512",
-                "type": "image/png"
+                "type": "image/png",
+                "purpose": "any maskable"
             }
         ]
     }
