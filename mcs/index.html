@@ -122,28 +122,22 @@
             // register service worker for pwa functionality
             if ('serviceWorker' in navigator) {
                 // inspired by https://stackoverflow.com/a/14462451
-                const path = window.location.pathname
-
+                // const path = window.location.pathname
                 // current path of subject e.g. /mcs/
-                const subjectPath = path.substr(0, path.lastIndexOf("/"));
-
+                // const subjectPath = path.substr(0, path.lastIndexOf("/"));
                 // path where static assets for all reside in
-                const staticPath = subjectPath.substr(0, subjectPath.lastIndexOf("/")) + '/static/';
+                // const staticPath = subjectPath.substr(0, subjectPath.lastIndexOf("/")) + '/static/';
 
                 window.addEventListener('load', () => {
                     // first add worker to cache static files like main.css
-                    navigator.serviceWorker.register('../static/static-cache-worker.js', {
-                        scope: staticPath
-                    }).then((reg) => {
+                    navigator.serviceWorker.register('../static/static-cache-worker.js').then((reg) => {
                         console.log('Service worker for static files registered.', reg);
-                    });
+                    }).catch(e => console.warn(e));
 
                     // then add worker to cache index.html of subject and manifest.json and so on
-                    navigator.serviceWorker.register('./subject-files-cache-worker.js', {
-                        scope: subjectPath + '/'
-                    }).then((reg) => {
+                    navigator.serviceWorker.register('./subject-files-cache-worker.js').then((reg) => {
                         console.log('Service worker for subject files registered.', reg);
-                    });
+                    }).catch(e => console.warn(e));
                 });
             }
         </script>
