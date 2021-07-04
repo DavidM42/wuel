@@ -19,7 +19,7 @@ def createManifest(subjectPath = None, subjectTitle = None, color = None, backgr
         "description": "Quick links for students at the university würzburg to save you time",
         "theme_color": "#fff4f4",
         "background_color": "#004188",
-        "display": "browser",
+        "display": "minimal-ui",
         "orientation": "portrait",
         "scope": "/",
         "start_url": "/",
@@ -43,6 +43,7 @@ def createManifest(subjectPath = None, subjectTitle = None, color = None, backgr
         data["theme_color"] = color
         data["background_color"] = background_color
         data["start_url"] = "/" + subjectPath + "/"
+        data["scope"] = "/" + subjectPath + "/"
     
     base_path = "dist/"
     filename = "manifest.json"
