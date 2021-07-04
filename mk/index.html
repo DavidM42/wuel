@@ -112,7 +112,7 @@
                 const subjectPath = path.substr(0, path.lastIndexOf("/"));
 
                 // path where static assets for all reside in
-                const staticPath = subjectPath.substr(0, subjectPath.lastIndexOf("/")) + '/static';
+                const staticPath = subjectPath.substr(0, subjectPath.lastIndexOf("/")) + '/static/';
 
                 window.addEventListener('load', () => {
                     // first add worker to cache static files like main.css
@@ -124,7 +124,7 @@
 
                     // then add worker to cache index.html of subject and manifest.json and so on
                     navigator.serviceWorker.register('./static/subject-files-cache-worker.js', {
-                        scope: subjectPath
+                        scope: subjectPath + '/'
                     }).then((reg) => {
                         console.log('Service worker for subject files registered.', reg);
                     });
