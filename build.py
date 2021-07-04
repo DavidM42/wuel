@@ -17,8 +17,8 @@ def createManifest(subjectPath = None, subjectTitle = None, color = None, backgr
         "name": "Wuel Quick Links",
         "short_name": "Wuel",
         "description": "Quick links for students at the university würzburg to save you time",
-        "theme_color": "#215293",
-        "background_color": "#2196f3",
+        "theme_color": "#fff4f4",
+        "background_color": "#004188",
         "display": "browser",
         "orientation": "portrait",
         "scope": "/",
@@ -170,6 +170,7 @@ def renderSubjectPages():
                 env_globals=data)
             site.render()
             createManifest(subject,data["title"],data["color"], data["backgroundColor"], '..')
+            createLinksJson(data["links"], subject)
     return subjectLinks
 
 def renderHomepage(subjectLinks):
@@ -185,7 +186,10 @@ def renderHomepage(subjectLinks):
             "links": subjectLinks
         })
     site.render()
-    createManifest()
+    # don't actually need a manifest for the index page
+    # only useful for specifc course with offline caching and so on
+    # would be uneeded clicks anyways 
+    # createManifest()
 
 def createCoursesJson(subjectLinks):
     courseJsonPath = 'dist/courses.json'
@@ -194,6 +198,13 @@ def createCoursesJson(subjectLinks):
         print("Creating courses.json...")
         json.dump(subjectLinks, outfile)
 
+def createLinksJson(servicesLinks, courseName):
+    linkJsonPath = f"dist/{courseName}/links.json"
+    # write json file with all links available to course
+    # can be used by apis and bots as api without parsing
+    with open(linkJsonPath, 'w', encoding='utf-8') as outfile:
+        print(f"Creating links.json for {courseName}...")
+        json.dump(servicesLinks, outfile)
 
 if __name__ == "__main__":
     try:
